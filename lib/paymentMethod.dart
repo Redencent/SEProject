@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'order_review.dart';
 import 'payment_method_properties.dart';
-
+import 'shipping.dart';
 
 // Define a custom Form widget.
 class PaymentMethodForm extends StatefulWidget {
@@ -23,7 +23,7 @@ class PaymentMethodFormState extends State<PaymentMethodForm> {
     //pack the children closely together,
     children: [
       Image.asset('images/Cards.PNG',height: 92.0,
-     width: 200.0,),
+        width: 200.0,),
 
     ],
   );
@@ -64,11 +64,11 @@ class PaymentMethodFormState extends State<PaymentMethodForm> {
               child: ListView(
                 children: [
                   new AppBar(
-                  centerTitle: true,
-                  backgroundColor: Colors.black,
-                  title: Text("Hyperion Controllers", style: TextStyle(color: Colors.white)),
-            
-          ),
+                    centerTitle: true,
+                    backgroundColor: Colors.black,
+                    title: Text("Hyperion Controllers", style: TextStyle(color: Colors.white)),
+
+                  ),
                   Text(
                     'Payment Method',
                     style: TextStyle(
@@ -177,7 +177,7 @@ class PaymentMethodFormState extends State<PaymentMethodForm> {
                     ],
                     onSaved: (value) {
                       List<int> expiryDate =
-                          CardProperties.getExpiryDate(value);
+                      CardProperties.getExpiryDate(value);
                       _paymentCardInfo.month = expiryDate[0];
                       _paymentCardInfo.year = expiryDate[1];
                     },
@@ -211,7 +211,8 @@ class PaymentMethodFormState extends State<PaymentMethodForm> {
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('Processing Data')));
-                    },
+                    Navigator.pop(context, MaterialPageRoute(builder: (Context) => ShippingInfo()));
+                      },
                     child: Text('Back'),
                   )
                 ],

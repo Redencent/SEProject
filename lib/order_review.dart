@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'paymentMethod.dart';
-import 'main.dart';
+import 'order_confirmation.dart';
 
 class OrderReviewScreen extends StatelessWidget {
   //final cardInfo;
@@ -21,17 +21,17 @@ class OrderReviewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.black,
-          title: Text("Hyperion Controllers", style: TextStyle(color: Colors.white))),
+            centerTitle: true,
+            backgroundColor: Colors.black,
+            title: Text("Hyperion Controllers", style: TextStyle(color: Colors.white))),
         body: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
                 new Image(
-                image: new AssetImage('images/Hyperion-Logo-1-2274.jpg'),
-                height: 160.0,
-                width: 340.0,
+                  image: new AssetImage('images/Hyperion-Logo-1-2274.jpg'),
+                  height: 160.0,
+                  width: 340.0,
                 ),
                 Container(height: 20),
                 Table(
@@ -132,7 +132,7 @@ class OrderReviewScreen extends StatelessWidget {
                 ElevatedButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => OrderConfirm()));
-                  },
+                    },
                     child: Text('Submit Order')),
                 SizedBox(
                   height: 30.0,
